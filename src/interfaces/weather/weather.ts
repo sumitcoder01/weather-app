@@ -2,11 +2,11 @@ export interface WeatherResponse {
   cod: string;
   message: number;
   cnt: number;
-  list: List[];
+  list: WeatherData[];
   city: City;
 }
 
-export interface List {
+export interface WeatherData {
   dt: number;
   main: Main;
   weather: Weather[];
