@@ -27,7 +27,7 @@ export default function TempCard({ city, weatherData }: { city: string, weatherD
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [weatherData.dt_txt, city])
     return (
-        <div className="mx-auto rounded-md py-4 px-5 shadow-lg bg-[#413d3d] text-white mb-5 mt-10 md:mb-1">
+        <div className="min-w-72 mx-auto rounded-md py-4 px-5 shadow-lg bg-[#413d3d] text-white mb-5 mt-10 md:mb-1">
             <div className="text-xl mb-2">{currentCity}</div>
             <div className="flex items-center space-x-4">
                 <img src={ICON_URL + `${weatherData.weather[0].icon}.png`} alt={weatherData.weather[0].main} className="h-20 w-20 object-fill object-center" />
@@ -47,7 +47,5 @@ export default function TempCard({ city, weatherData }: { city: string, weatherD
                 </div>
             </div>
         </div>
-
-
     )
 }
