@@ -17,9 +17,17 @@ export default function TempCard({ city, weatherData }: { city: string, weatherD
     }
 
     const getCity = () => {
-        const cityUpperCase = city[0].toUpperCase() + city.substring(1).toLowerCase();
-        setCurrentCity(cityUpperCase)
+        const cityWords = city.split(" ");
+        const formattedCityWords = [];
+        for (let i = 0; i < cityWords.length; i++) {
+            const word = cityWords[i];
+            const formattedWord = word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
+            formattedCityWords.push(formattedWord);
+        }
+        const formattedCity = formattedCityWords.join(" ");
+        setCurrentCity(formattedCity);
     }
+
 
     useEffect(() => {
         getDate(weatherData.dt_txt);

@@ -6,7 +6,7 @@ export const getCity = async (latitude: number, longitude: number): Promise<stri
         const response = await fetch(`${GET_LOCATION}?key=${GEO_API_KEY}&q=${latitude + "," + longitude}&pretty=1`);
         if (!response.ok) throw new Error("Location not found");
         const data: Location = await response.json() as Location;
-        return data.results[0].components.state;
+        return data.results[0].components._normalized_city;
     } catch (error) {
         console.error(error);
         return "";
